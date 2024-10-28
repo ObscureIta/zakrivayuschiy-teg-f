@@ -19,4 +19,7 @@
   font-weight: var(--font-weight-normal);
   min-inline-size: 320px;
   min-block-size: 100dvb;
+
+  background-color: var(--background-color);
+  color: var(--accent-color);
 }
