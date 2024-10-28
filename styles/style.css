@@ -15,6 +15,9 @@
 */
 
 .page {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   font-family: var(--main-font);
   font-weight: var(--font-weight-normal);
   min-inline-size: 320px;
@@ -25,4 +28,61 @@
   background-image: var(--background-image);
   background-size: cover;
   background-attachment: fixed;
+}
+
+.content-section {
+  inline-size: min(100%, 700px);
+}
+
+.header {
+  margin: 100px 0;
+  padding: clamp(7.5rem, 7.148rem + 1.504vw, 8.5rem) 0 25px;
+  background-color: var(--background-color);
+  font-family: var(--accent-font);
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--accent-color);
+}
+
+.header__title {
+  font-size: clamp(3.063rem, 2.71rem + 1.504vw, 4.063rem);
+  font-weight: 400;
+  line-height: 1em;
+  margin-bottom: 20px;
+}
+
+.header__subtitle {
+  text-transform: uppercase;
+  font-size: clamp(0.875rem, 0.677rem + 0.846vw, 1.438rem);
+  line-height: 1em;
+  text-align: left;
+  margin-bottom: 23px;
+}
+
+.theme-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.theme-menu__button {
+  margin-left: 20px;
+  position: relative;
+  font-size: 14px;
+  line-height: 14px;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: none;
+}
+
+.theme-menu__button:disabled {
+  opacity: 0.6;
+}
+
+.theme-menu__button:disabled::before {
+  content: "▶";
+  display: block;
+  position: absolute;
+  inset-inline-start: -14px;
 }
