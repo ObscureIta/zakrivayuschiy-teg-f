@@ -1,13 +1,21 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 
 :root {
-  /* FONTS*/
+  /* fonts */
   --main-font: Inter, sans-serif;
   --accent-font: PressStart2P, system-ui;
   --font-weight-normal: 400;
   --font-weight-bold: 700;
 
-  /* PAGE */
+  /* BG-grad-colors */
+  --bg-color-lines: #d3d3d3;
+  --bg-color-first: #e7e7e7 0.01%;
+  --bg-color-second: #1a1a1a;
+  /* page */
   --background-color: #fff;
   --accent-color: #000;
+  --background-image:
+      repeating-linear-gradient(to right,   var(--bg-color-lines) 0 2px, transparent 2px 4px),
+      repeating-linear-gradient(to bottom, var(--bg-color-lines) 0 2px, transparent 2px 4px),
+      linear-gradient(to bottom, var(--bg-color-first), var(--bg-color-second));
 }
