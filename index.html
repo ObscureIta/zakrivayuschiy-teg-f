@@ -49,7 +49,10 @@
     <main class="content content-section">
       <article class="content__card">
         <h2 class="card__title">Фритрек и нулевой спринт: Подготовка к работе</h2>
-        <img src="./images/optimize-content-image.png" alt="" class="card__image">
+        <div class="card__image-wrapper">
+          <img src="./images/content-image.jpg" alt="" class="card__image">
+          <span class="card__image-label">&lt;/HTML&gt;</span>
+        </div>
         <div class="card__wrapper">
           <div class="card__paragraph-wrapper">
             <p class="card__paragraph">
@@ -89,6 +92,14 @@
             </button>
           </div>
         </div>
+      </article>
+      <article class="content__button-wrapper">
+        <button class="content__button-save">
+          <svg class="floppy" width="21" height="21">
+            <use href="./svg/floppy-optimize.svg#floppy"></use>
+          </svg>
+          <span>Сохранить на память</span>
+        </button>
       </article>
     </main>
     <script src="./scripts/like.js"></script>
