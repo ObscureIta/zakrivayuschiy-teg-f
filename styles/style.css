@@ -1,20 +1,20 @@
-/* Здесь вы напишете основную часть стилей страницы.
+  /* Здесь вы напишете основную часть стилей страницы.
 
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ theme-dark — класс тёмной темы
-✦ theme-light — класс светлой темы
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
+  Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
+  ✦ theme-dark — класс тёмной темы
+  ✦ theme-light — класс светлой темы
+  ✦ like-icon — для svg-иконки анимированного сердца
+  ✦ card__like-button — для кнопки Like рядом с иконкой
+  ✦ card__icon-button — для кнопки, оборачивающей иконку
+  ✦ card__icon-button — для кнопки, оборачивающей иконку
+  ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
+  ✦ button__text — для обозначения текстового элемента внутри кнопки
 
-Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
+  Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 
-*/
+  */
 
-/* globals */
+  /* globals */
 .page {
   display: flex;
   flex-direction: column;
@@ -37,6 +37,10 @@
   inline-size: min(100%, 700px);
 }
 
+.button {
+  transition: box-shadow 0.3s ease;
+}
+
 /* header */
 .header {
   display: flex;
@@ -45,7 +49,7 @@
 
   margin: 100px 0 100px;
   border: 2px solid var(--accent-color);
-  padding: clamp(7.5rem, 7.148rem + 1.504vw, 8.5rem) 0 25px;
+  padding: clamp(7.5rem, 7.148rem + 1.504vw, 8.5rem) 0 22px;
 
   font-family: var(--accent-font);
   text-align: left;
@@ -72,7 +76,7 @@
 .theme-menu__list {
   display: flex;
   flex-direction: column;
-  gap: 11px;
+  gap: 8px;
 }
 
 .theme-menu__button {
@@ -83,7 +87,10 @@
   font-size: 14px;
   line-height: 14px;
   text-transform: uppercase;
+
   background-color: transparent;
+
+  transition: opacity 0.6s ease;
 }
 
 .theme-menu__button:disabled {
@@ -94,7 +101,21 @@
   content: "▶";
   position: absolute;
   display: block;
+  animation: arrow-movement 0.5s infinite alternate ease-in-out;
   inset-inline-start: -14px;
+}
+
+
+.theme-menu__button::after {
+  content: '';
+  display: block;
+  height: 2px;
+  margin-top: 1px;
+  background-color: var(--accent-color);
+
+  transition: transform 0.3s, opacity 0.3s ease;
+  transform: scaleX(0);
+  transform-origin: left center;
 }
 
 /* content */
@@ -111,7 +132,7 @@
 }
 
 .card__title {
-  padding: 3px 10px;
+  padding: 4px 10px;
 
   font-weight: var(--font-weight-bold);
   font-size: 18px;
@@ -126,9 +147,9 @@
 
 .card__image {
   display: block;
-  width: 696px;
+  width: 100%;
   object-fit: cover;
-  object-position: calc(100% + 17px);
+  object-position: calc(100% + 13px);
   aspect-ratio: 1 / 1;
 }
 
@@ -147,18 +168,18 @@
   mix-blend-mode: hard-light;
 }
 
-.card__wrapper {
+.card__wrapper-content {
   display: flex;
   flex-direction: column;
   gap: 25px;
 
-  padding: 26px 25px 25px;
+  padding: 24px 25px 25px;
 }
 
 .card__paragraph-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 27px;
 
   font-size: 18px;
   line-height: 21px;
@@ -182,28 +203,25 @@
 }
 
 .card__like-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 130px;
+  height: 40px;
   border: 2px solid var(--accent-color);
-  padding: 11.5px 35px;
 
   font-family: var(--accent-font);
   font-size: 14px;
   line-height: 12.6px;
   
   background-color: transparent;
+
+  
 }
 /* ТУТ ПЕРЕДЕЛАТЬ */
 
   /* save button */
-
-.content__button-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 400px;
-  height: 400px;
-  border: 2px solid var(--accent-color);
-  background-color: var(--background-color);
-}
 
 .content__button-save {
   position: relative;
@@ -211,39 +229,46 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 
-  width: 306px;
+  width: 339px;
+  height: 56px;
+  margin: 0 auto 100px;
   border: 2px solid var(--accent-color);
 
   color: var(--accent-color);
-  background-color: transparent;
+  background-color: var(--background-color);
   cursor: pointer;
 }
 
-.content__button-save svg {
-  position: relative;
-  z-index: 1;
-  /* mix-blend-mode: difference; */
+.button__text {
+  font-family: var(--accent-font);
+  font-size: 14px;
+  line-height: 12.6px;
 }
 
-.content__button-save span {
-  position: relative;
-  z-index: 10;
-  text-align: center;
-  /* mix-blend-mode: difference; */
+/* actions */
+.theme-menu__button:not(:disabled):hover{
+  opacity: 0.6; 
+}
+ 
+.theme-menu__button:focus { 
+  outline: 0;
 }
 
-.content__button-save:after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: var(--main-color);
-  transition: transform 0.5s ease-in-out;
-  transform: scaleX(0);
-  transform-origin: left;
+.theme-menu__button:focus-visible {
+  opacity: 0.6;
 }
 
-.content__button-save:hover:after {
+.theme-menu__button:focus-visible::after {
+  opacity: 0.6;    
   transform: scaleX(1);
+}
+
+.button:focus {
+  outline: 0;
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px 0px 0px var(--accent-color);
 }
