@@ -111,13 +111,36 @@
         </div>
       </article>
       <article class="content__button-wrapper">
-        <button class="content__button-save button">
-          <svg class="floppy" width="28" height="28">
+        <button 
+          class="content__button-save button" 
+          type="button"
+          onclick="window['dialog-id'].showModal();"
+          aria-controls="dialog-id"
+        >
+          <svg class="button__floppy-icon" viewBox="0 0 39 39">
             <use href="./svg/floppy-optimize.svg#floppy"></use>
           </svg>
           <span class="button__text">Сохранить на память</span>
         </button>
       </article>
+      <dialog class="content__popup" id="dialog-id">
+        <div class="popup_wrapper">
+          <div class="popup__svg-wrapper">
+            <svg class="popop__floppy floppy" viewBox="0 0 39 39">
+              <use href="./svg/floppy-optimize.svg#floppy"></use>
+            </svg>
+          </div>
+          <p class="popup__text">Вставьте
+            дискету, чтобы продолжить</p>
+        </div>
+        <button 
+          class="popup__button button" 
+          type="button"
+          onclick="window['dialog-id'].close();"
+        >
+          <span class="button__text">ok</span>
+        </button>
+      </dialog>
     </main>
     <script src="./scripts/like.js"></script>
   </body>
