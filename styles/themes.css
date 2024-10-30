@@ -17,6 +17,9 @@
   /* page */
   --background-color: #000;
   --accent-color: #00CC14;
+
+  /* buttons */
+  --button-content-color: #00CC14;
 }
 
 :root.theme-light {
@@ -32,6 +35,9 @@
   /* page */
   --background-color: #fff;
   --accent-color: #000;
+
+  /* buttons */
+  --button-content-color: #fff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -48,5 +54,8 @@
     /* page */
     --background-color: #000;
     --accent-color: #00CC14;
+
+    /* buttons */
+    --button-content-color: #00CC14;
   }
 }

@@ -1,4 +1,4 @@
-  /* Здесь вы напишете основную часть стилей страницы.
+/* Здесь вы напишете основную часть стилей страницы.
 
   Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
   ✦ theme-dark — класс тёмной темы
@@ -14,7 +14,7 @@
 
   */
 
-  /* globals */
+/* globals */
 .page {
   display: flex;
   flex-direction: column;
@@ -38,7 +38,38 @@
 }
 
 .button {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 2px solid var(--accent-color);
+
+  color: var(--button-content-color);
+  background-color: var(--background-color);
+
   transition: box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--accent-color);
+  transition: transform 0.5s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.button__text {
+  position: relative;
+  z-index: 1;
+  mix-blend-mode: difference;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  line-height: 12.6px;
 }
 
 /* header */
@@ -98,13 +129,12 @@
 }
 
 .theme-menu__button:disabled::before {
-  content: "▶";
+  content: '▶';
   position: absolute;
   display: block;
   animation: arrow-movement 0.5s infinite alternate ease-in-out;
   inset-inline-start: -14px;
 }
-
 
 .theme-menu__button::after {
   content: '';
@@ -125,7 +155,7 @@
   gap: 50px;
 }
 
-  /* cards */
+/* cards */
 .content__card {
   border: 2px solid var(--accent-color);
   background-color: var(--background-color);
@@ -142,7 +172,7 @@
 .card__image-wrapper {
   position: relative;
   border-block-start: 2px solid var(--accent-color);
-  border-block-end: 2px solid var(--accent-color);;
+  border-block-end: 2px solid var(--accent-color);
 }
 
 .card__image {
@@ -160,11 +190,11 @@
   font-size: 14px;
   line-height: 1em;
   text-align: left;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, .6);
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.6);
 
   inset-inline-end: 25px;
   inset-block-start: 25px;
-  
+
   mix-blend-mode: hard-light;
 }
 
@@ -185,75 +215,73 @@
   line-height: 21px;
 }
 
+/* buttons-wrapper */
 .card__button-wrapper {
   display: flex;
   justify-content: flex-end;
-  align-items: flex-end;
-  gap: 5px;
+  align-items: center;
+  gap: 7px;
 }
 
-/* ТУТ ПЕРЕДЕЛАТЬ */
 .card__icon-button {
-  border: none;
+  border: 2px solid;
+  border-color: transparent;
+  padding: 0;
+  display: flex;
+  align-items: center;
   background-color: transparent;
+  transition: border-color 0.3s ease;
 }
 
-.like-icon path{
+.like-icon path {
   fill: var(--accent-color);
 }
 
 .card__like-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
   width: 130px;
   height: 40px;
-  border: 2px solid var(--accent-color);
 
   font-family: var(--accent-font);
   font-size: 14px;
   line-height: 12.6px;
-  
+
   background-color: transparent;
-
-  
 }
-/* ТУТ ПЕРЕДЕЛАТЬ */
+/* buttons-wrapper */
+/* cards */
 
-  /* save button */
-
+/* save button */
 .content__button-save {
-  position: relative;
-
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 6px;
 
   width: 339px;
-  height: 56px;
+  height: 55px;
   margin: 0 auto 100px;
   border: 2px solid var(--accent-color);
 
-  color: var(--accent-color);
-  background-color: var(--background-color);
   cursor: pointer;
 }
 
-.button__text {
-  font-family: var(--accent-font);
-  font-size: 14px;
-  line-height: 12.6px;
+.button .floppy {
+  margin-top: 4px;
+  z-index: 1;
+  mix-blend-mode: difference;
 }
+/* save button */
+/* content */
 
 /* actions */
-.theme-menu__button:not(:disabled):hover{
-  opacity: 0.6; 
-}
- 
-.theme-menu__button:focus { 
+.button:focus,
+.theme-menu__button:focus,
+.card__icon-button:focus {
   outline: 0;
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px 0px 0px var(--accent-color);
 }
 
 .theme-menu__button:focus-visible {
@@ -261,14 +289,18 @@
 }
 
 .theme-menu__button:focus-visible::after {
-  opacity: 0.6;    
+  opacity: 0.6;
   transform: scaleX(1);
 }
 
-.button:focus {
-  outline: 0;
+.card__icon-button:focus-visible {
+  border-color: var(--accent-color);
 }
 
-.button:focus-visible {
-  box-shadow: 2px 2px 0px 0px var(--accent-color);
+.theme-menu__button:not(:disabled):hover {
+  opacity: 0.6;
+}
+
+.button:hover:after {
+  transform: scaleX(1);
 }
