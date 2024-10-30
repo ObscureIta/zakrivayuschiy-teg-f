@@ -14,11 +14,23 @@
   /* page */
   --background-color: #fff;
   --accent-color: #000;
-  --background-image:
-      repeating-linear-gradient(to right,   var(--bg-color-lines) 0 2px, transparent 2px 4px),
-      repeating-linear-gradient(to bottom, var(--bg-color-lines) 0 2px, transparent 2px 4px),
-      linear-gradient(to bottom, var(--bg-color-first), var(--bg-color-second));
+  --background-image: repeating-linear-gradient(
+      to right,
+      var(--bg-color-lines) 0 2px,
+      transparent 2px 4px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      var(--bg-color-lines) 0 2px,
+      transparent 2px 4px
+    ),
+    linear-gradient(to bottom, var(--bg-color-first), var(--bg-color-second));
 
   /* buttons */
   --button-content-color: #fff;
+
+  /* icon-variables */
+  --icon-accent-color: #ff0000;
+  --icon-body-color: none;
+  --icon-core-color: none;
 }
