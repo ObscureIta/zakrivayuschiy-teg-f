@@ -363,10 +363,12 @@
 /* save button */
 
 /* popup */
-.content__popup[open] {
+.content__popup {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  transition: opacity 0.3s ease-in-out;
 
   padding: 30px;
   color: var(--accent-color);
@@ -378,6 +380,11 @@
 
   inline-size: 357px;
   block-size: 193px;
+}
+
+.content__popup:not([open]){
+  opacity: 0;
+  pointer-events: none;
 }
 
 .content__popup::backdrop {
