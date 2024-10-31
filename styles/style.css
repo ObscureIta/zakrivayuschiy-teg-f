@@ -456,8 +456,8 @@
   filter: brightness(200%);
 }
 
-.image-filter-contrast {
-  filter: contrast(20%);
+.image-filter-mixed {
+  filter: contrast(140%) brightness(120%) sepia(35%) blur(2px);
 }
 
 .img-filter-blur {
