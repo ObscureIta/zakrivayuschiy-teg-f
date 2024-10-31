@@ -3,10 +3,10 @@
 :root {
   /* fonts */
   --main-font: Inter, sans-serif;
-  --accent-font: PressStart2P, system-ui;
+  --accent-font: PressStart2P, fantasy;
   --font-weight-normal: 400;
   --font-weight-bold: 700;
-
+  --font-shadow-color: rgba(255, 255, 255, 0.6)
   /* BG-grad-colors */
   --bg-color-lines: #d3d3d3;
   --bg-color-first: #e7e7e7 0.01%;

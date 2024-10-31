@@ -188,7 +188,7 @@
 
 .card__image {
   display: block;
-  width: 100%;
+  inline-size: 100%;
 
   object-fit: cover;
   object-position: calc(100% + 13px);
@@ -203,20 +203,20 @@
   font-size: 14px;
   line-height: 1em;
   text-align: left;
-  text-shadow: 1px 0px 0px rgba(255, 255, 255, 0.6),
-    -1px 0px 0px rgba(255, 255, 255, 0.6), 0px 1px 0px rgba(255, 255, 255, 0.6),
-    0px -1px 0px rgba(255, 255, 255, 0.6);
+  text-shadow: 1px 0px 0px var(--font-shadow-color),
+    -1px 0px 0px var(--font-shadow-color), 0px 1px 0px var(--font-shadow-color),
+    0px -1px 0px var(--font-shadow-color);
 
-  inset-inline-end: 25px;
+  inset-inline-end: min(3.467vi, 25px);
   inset-block-start: 25px;
 
   mix-blend-mode: hard-light;
 }
 
-@supports (-webkit-text-stroke: 2px #000) {
+@supports (-webkit-text-stroke: 1px var(--font-shadow-color)) {
   .card__image-label {
     text-shadow: none;
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.6);
+    -webkit-text-stroke: 1px var(--font-shadow-color);
   }
 }
 
@@ -260,7 +260,7 @@
 }
 
 .card__like-button {
-  width: 130px;
+  inline-size: 130px;
   height: 38px;
 
   font-family: var(--accent-font);
@@ -308,11 +308,11 @@
 
 .like-icon.is-liked .heart {
   transform-origin: center;
-  animation: ico-scale 0.3s linear 0.08s alternate;
+  animation: ico-scale 0.3s ease-in 0.1s alternate;
 }
 
 .like-icon.is-liked .sparks {
-  animation: ico-sparks 0.3s linear 0.2s alternate;
+  animation: ico-sparks 0.3s linear 0.3s;
 }
 
 .like-icon:hover .core {
@@ -345,7 +345,7 @@
   align-items: center;
   gap: 6px;
 
-  width: 339px;
+  inline-size: 339px;
   height: 55px;
   margin: 0 auto 100px;
   border: 2px solid var(--accent-color);
@@ -355,7 +355,7 @@
 
 .button__floppy-icon {
   z-index: 1;
-  width: 21px;
+  inline-size: 21px;
   height: 21px;
 
   mix-blend-mode: difference;
@@ -392,8 +392,14 @@
 }
 
 .popop__floppy {
-  width: 39px;
+  inline-size: 39px;
   height: 39px;
+}
+
+.popup__text {
+  text-transform: uppercase;
+  line-height: 21px;
+  font-size: 14px;
 }
 
 .popup__button {
@@ -474,17 +480,17 @@
   .content__button-save {
     flex-direction: column;
 
-    width: 310px;
+    inline-size: 310px;
     height: 85px;
   }
 
   .button__floppy-icon {
-    width: 28px;
+    inline-size: 28px;
     height: 28px;
   }
 
   .content__popup {
-    width: 341px;
+    inline-size: 341px;
     height: 195px;
   }
 }
