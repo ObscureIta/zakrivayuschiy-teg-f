@@ -71,7 +71,7 @@
 
   font-family: var(--accent-font);
   font-size: 14px;
-  line-height: 12.6px;
+  line-height: 0.9em;
 
   mix-blend-mode: difference;
 }
@@ -121,7 +121,7 @@
   border: none;
 
   font-size: 14px;
-  line-height: 14px;
+  line-height: 1em;
   text-transform: uppercase;
 
   background-color: transparent;
@@ -147,7 +147,7 @@
   content: '';
   display: block;
 
-  height: 2px;
+  block-size: 2px;
   margin-top: 1px;
 
   background-color: var(--accent-color);
@@ -177,7 +177,7 @@
   font-variation-settings: 'wgth' var(--font-weight-bold);
 
   font-size: 18px;
-  line-height: 23px;
+  line-height: 1.27em;
 }
 
 .card__image-wrapper {
@@ -235,7 +235,7 @@
   gap: 27px;
 
   font-size: 18px;
-  line-height: 21px;
+  line-height: 1.27em;
 }
 
 /* buttons-wrapper */
@@ -249,7 +249,7 @@
   display: flex;
   align-items: center;
 
-  height: 38px;
+  block-size: 38px;
   border: 2px solid;
   border-color: transparent;
   padding: 0;
@@ -261,11 +261,11 @@
 
 .card__like-button {
   inline-size: 130px;
-  height: 38px;
+  block-size: 38px;
 
   font-family: var(--accent-font);
   font-size: 14px;
-  line-height: 12.6px;
+  line-height: 0.9em;
 
   background-color: transparent;
 }
@@ -346,7 +346,7 @@
   gap: 6px;
 
   inline-size: 339px;
-  height: 55px;
+  block-size: 55px;
   margin: 0 auto 100px;
   border: 2px solid var(--accent-color);
 
@@ -356,7 +356,7 @@
 .button__floppy-icon {
   z-index: 1;
   inline-size: 21px;
-  height: 21px;
+  block-size: 21px;
 
   mix-blend-mode: difference;
 }
@@ -367,9 +367,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 30px;
 
   transition: opacity 0.3s ease-in-out;
 
+  border: 2px solid var(--accent-color);
   padding: 30px;
   color: var(--accent-color);
   font-family: var(--accent-font);
@@ -379,10 +381,9 @@
   transition: opacity 0.3s ease-in-out;
 
   inline-size: 357px;
-  block-size: 193px;
 }
 
-.content__popup:not([open]){
+.content__popup:not([open]) {
   opacity: 0;
   pointer-events: none;
 }
@@ -400,7 +401,7 @@
 
 .popop__floppy {
   inline-size: 39px;
-  height: 39px;
+  block-size: 39px;
 }
 
 .popup__text {
@@ -410,7 +411,7 @@
 }
 
 .popup__button {
-  height: 38px;
+  block-size: 38px;
 }
 
 .popup__button .button__text {
@@ -488,17 +489,16 @@
     flex-direction: column;
 
     inline-size: 310px;
-    height: 85px;
+    block-size: 85px;
   }
 
   .button__floppy-icon {
     inline-size: 28px;
-    height: 28px;
+    block-size: 28px;
   }
 
   .content__popup {
     inline-size: 341px;
-    height: 195px;
   }
 }
 /* media */

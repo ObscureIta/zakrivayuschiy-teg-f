@@ -6,11 +6,13 @@
   --accent-font: PressStart2P, fantasy;
   --font-weight-normal: 400;
   --font-weight-bold: 700;
-  --font-shadow-color: rgba(255, 255, 255, 0.6)
+  --font-shadow-color: rgba(255, 255, 255, 0.6);
   /* BG-grad-colors */
+
   --bg-color-lines: #d3d3d3;
   --bg-color-first: #e7e7e7 0.01%;
   --bg-color-second: #1a1a1a;
+
   /* page */
   --background-color: #fff;
   --accent-color: #000;
